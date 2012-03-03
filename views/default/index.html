@@ -1,0 +1,72 @@
+{{extend 'layout.html'}}
+<h2>Welcome</h2>
+
+<script type="text/javascript" src="jquery.js"></script>
+<hr />
+{{for formal in formals:}}
+{{link=A(formal.formal_date.strftime('%A %d %B'), _href=URL('show', args=formal.id))}}
+{{formal_str = str(formal.formal_date.strftime('%A %d %B'))}}
+{{signup_str = str(formal.formal_signup.strftime('%A, %d %B %H:%M:%S'))}}
+{{response.write("""
+<script type="text/javascript">
+ $(document).ready(function() {
+   $("#button_%s").click(function() {
+     $("#commitModal").load("%s");
+   });
+ });                                             
+ </script>
+"""%(formal.id, URL('show', args=formal.id)), escape=False)}}
+{{response.write('''
+<div class="row">
+  <div class="span4">
+    <h3>%s</h3>
+  </div>
+  <div class="span1">
+      <button class="btn btn-success" data-toggle="modal" href="#commitModal" id='button_%s'}>Available!</button>
+    <!--<else>
+      <button class="btn btn-danger" data-toggle="modal" href="#sorryModal">It's&nbsp;Full!</button>
+    pass-->
+  </div>
+</div>
+<p><span class="label label-warning">Opens at</span>&nbsp;%s</p>
+<br />'''%(formal.formal_date.strftime('%A %d %B'),formal.id,signup_str),escape=False)}}
+{{pass}}
+
+<!-- MODALS -->
+  <!-- #commitModal -->
+     <div class="modal hide fade" id="commitModal"></div>
+      <!-- <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>FORMAL DATE</h3>
+      </div>
+      <div class="modal-body">
+        <h4>FORMAL_PLACES_NUMBER places left!</h4>
+        <br />
+        <strong>are you ready for a commitment?</strong>
+        <br />
+        <p>Sign up opens at <strong>SIGNUP DATETIME</strong>.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success">Commit</a>
+        <a href="#" class="btn btn-warning" data-dismiss="modal">Cancel</a>
+      </div>
+    </div> -->
+  <!-- END #commitModal -->
+  
+  <!-- #sorryModal -->
+    <!-- <div class="modal hide fade" id="sorryModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>sorry...</h3>
+      </div>
+      <div class="modal-body">
+        <strong><em>you're too late!</em></strong>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+      </div>
+    </div> -->
+  <!-- END #sorryModal -->
+
+<br />
+</div>

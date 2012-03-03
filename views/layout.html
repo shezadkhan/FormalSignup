@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rude Apps</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+
+      {{
+  response.files.append(URL('static','css/bootstrap.css'))
+  response.files.append(URL('static','css/custom.css'))
+  response.files.append(URL('static','css/superfish.css'))
+  response.files.append(URL('static','js/superfish.js'))
+  response.files.append(URL('static','js/superfish.js'))
+  response.files.append(URL('static','js/bootstrap-transition.js'))
+  response.files.append(URL('static','js/bootstrap-alert.js'))
+  response.files.append(URL('static','js/bootstrap-modal.js'))
+  response.files.append(URL('static','js/bootstrap-dropdown.js'))
+  response.files.append(URL('static','js/bootstrap-tab.js.js'))
+  response.files.append(URL('static','js/bootstrap-popover.js'))
+  response.files.append(URL('static','js/bootstrap-button.js'))
+  response.files.append(URL('static','js/bootstrap-collapse.js'))
+  response.files.append(URL('static','js/bootstrap-carousel.js'))
+  response.files.append(URL('static','js/bootstrap-typeahead.js'))
+  }}
+
+  {{include 'web2py_ajax.html'}}
+
+    <!-- <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
+    <style>
+    body{
+      padding-top:62px;
+    }
+
+    div.row small{
+      padding-left: 22px;
+      color:#eee;
+      text-decoration:bold;
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+
+      <div class="row">
+
+        <div class="span6 offset3">
+
+          <div class="row">
+                <small></small><a class="btn btn-small pull-right" href="/logout">
+            <i class="icon-off"></i>&nbsp;Logout</a>
+          </div>
+          <div class="well shadow nav-pad">
+                {{include}}
+          </div>
+        </div>
+
+
+        <footer>
+        <p>Designed and developed by <a href="http://twitter.com/yewchoontay">@yewchoontay</a> and <a href="http://twitter.com/khan_shezad">@khan_shezad</a>.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!-- // <script src="js/bootstrap-transition.js"></script>
+    // <script src="js/bootstrap-alert.js"></script>
+    // <script src="js/bootstrap-modal.js"></script>
+    // <script src="js/bootstrap-dropdown.js"></script>
+    // <script src="js/bootstrap-scrollspy.js"></script>
+    // <script src="js/bootstrap-tab.js"></script>
+    // <script src="js/bootstrap-tooltip.js"></script>
+    // <script src="js/bootstrap-popover.js"></script>
+    // <script src="js/bootstrap-button.js"></script>
+    // <script src="js/bootstrap-collapse.js"></script>
+    // <script src="js/bootstrap-carousel.js"></script>
+    // <script src="js/bootstrap-typeahead.js"></script> -->
+
+    <!-- {{
+  response.files.append(URL('static','js/superfish.js'))
+  response.files.append(URL('static','js/bootstrap-transition.js'))
+  response.files.append(URL('static','js/bootstrap-alert.js'))
+  response.files.append(URL('static','js/bootstrap-modal.js'))
+  response.files.append(URL('static','js/bootstrap-dropdown.js'))
+  response.files.append(URL('static','js/bootstrap-tab.js.js'))
+  response.files.append(URL('static','js/bootstrap-popover.js'))
+  response.files.append(URL('static','js/bootstrap-button.js'))
+  response.files.append(URL('static','js/bootstrap-collapse.js'))
+  response.files.append(URL('static','js/bootstrap-carousel.js'))
+  response.files.append(URL('static','js/bootstrap-typeahead.js'))
+  }} -->
+
+  </body>
+</html>

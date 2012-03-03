@@ -1,0 +1,8 @@
+<h1>Current Formals</h1>
+<ul>
+{{for formal in formals:}}
+{{=LI(A(formal.formal_date, _href=URL('show', args=formal.id)))}}
+{{pass}}
+</ul>
+{{=LI(A('Add Formal', _href=URL('add_formal')))}}
+

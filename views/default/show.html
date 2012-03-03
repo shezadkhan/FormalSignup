@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+        <h3>Formal On: {{=formal.formal_date.strftime('%A %d %B')}}</h3>
+      </div>
+      <div class="modal-body">
+        <h4>Currently on the List:</h4>
+        <br />
+       	{{for g in currently_signed_up:}}
+		{{for user in g:}}
+		<p>{{=user.email}}</br>
+		{{pass}}
+		{{pass}}</p>
+		<h4>People you have signed up before</h4>
+		{{for user in previously_signed_up:}}
+		<p>
+		{{=A(user.email, _href=URL('add_to_list',args=[formal.id, user.id]))}}<br>
+		{{pass}}</p>
+        <strong>are you ready for a commitment?</strong>
+        <br />
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success">Sign Up New Person!</a>
+     <a href="#" class="btn btn-warning" data-dismiss="modal">Cancel</a>
+	</div>
+
+<!--<h1>Show Formals</h1>
+<p The formal id is: {{=formal.id}} </p>
+<p> The auth_user is: {{=auth.user_id}} </p>
+<p>You have previously signed up the following people:</p>
+<ul>
+{{for user in previously_signed_up:}}
+{{=LI(A(user.email, _href=URL('add_to_list',args=[formal.id, user.id])))}}
+{{pass}}
+</ul>
+<p>People currently on the signup list for this formal:</p>
+{{for g in currently_signed_up:}}
+{{for user in g:}}
+<p>{{=user.email}}</p>
+{{pass}}
+{{pass}}
+<p> Not on there...signup a new person!!!</p>
+{{=LI(A('Sign Me Up!', _href=URL('sign_me_up', args=formal.id)))}} -->

@@ -1,0 +1,65 @@
+(dp1
+S'formal_date'
+p2
+(dp3
+S'type'
+p4
+S'datetime'
+p5
+sS'sortable'
+p6
+I2
+sS'sql'
+p7
+S'TIMESTAMP'
+p8
+ssS'user_id'
+p9
+(dp10
+S'type'
+p11
+S'reference user'
+p12
+sS'sortable'
+p13
+I2
+sS'sql'
+p14
+S'INTEGER REFERENCES user(id) ON DELETE CASCADE'
+p15
+ssS'id'
+p16
+(dp17
+g4
+S'id'
+p18
+sg6
+I1
+sg7
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p19
+ssS'created_by'
+p20
+(dp21
+S'type'
+p22
+S'reference auth_user'
+p23
+sS'sortable'
+p24
+I4
+sS'sql'
+p25
+S'INTEGER REFERENCES auth_user(id) ON DELETE CASCADE'
+p26
+ssS'formal_signup'
+p27
+(dp28
+g4
+g5
+sg6
+I3
+sg7
+S'TIMESTAMP'
+p29
+ss.
